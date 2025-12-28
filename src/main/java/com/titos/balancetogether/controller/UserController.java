@@ -21,11 +21,11 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PutMapping("/{id}")
+    @PostMapping
     public List<UserDto> updateUser(
-            @PathVariable long id,
-            @RequestBody UpdateUserRequest request
+            @RequestBody long id,
+            @RequestBody String name
     ) {
-        return userService.updateUserName(id, request.name());
+        return userService.updateUserName(id, name);
     }
 }
